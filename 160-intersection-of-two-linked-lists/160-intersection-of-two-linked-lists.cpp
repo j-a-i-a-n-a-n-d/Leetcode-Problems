@@ -9,7 +9,7 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        ListNode *head1=headA;
+       /* ListNode *head1=headA;
         ListNode *head2=headB;
         while (head1)
         {
@@ -22,6 +22,13 @@ public:
             }
             head1=head1->next;
         }
-        return NULL;
+        return NULL;*/
+        
+    ListNode *ptrA = headA, *ptrB = headB;
+    while (ptrA != ptrB) { 
+        ptrA = ptrA ? ptrA->next : headB;
+        ptrB = ptrB ? ptrB->next : headA;
+    }
+    return ptrA;
     }
 };
