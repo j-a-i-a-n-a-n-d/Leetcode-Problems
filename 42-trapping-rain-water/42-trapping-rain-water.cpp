@@ -49,7 +49,8 @@ public:
         }
         return answer;
         
-        
+        // intuition leftmax and rightmax are the current prefix suffix & the comp. 
+        // of a[l]&a[r] gives min of the two
         
         
         
