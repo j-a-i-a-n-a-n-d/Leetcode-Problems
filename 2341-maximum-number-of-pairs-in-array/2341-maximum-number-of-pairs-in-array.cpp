@@ -18,10 +18,7 @@ public:
         }
         vector<int> sol;
         sol.push_back(p);
-        if (nums.empty())
-            sol.push_back(0);
-        else
-            sol.push_back(nums.size());
+        sol.push_back(nums.size());
         return sol;
         
     }
