@@ -35,7 +35,7 @@ public:
             }
             head=head->next;
         }
-        right->next=NULL;
+        right->next=NULL; //MOST IMPORTANT LINE figured after an hour :(
         if (!rightStart)return leftStart;
         if (!leftStart)return rightStart;
         left->next=rightStart;
