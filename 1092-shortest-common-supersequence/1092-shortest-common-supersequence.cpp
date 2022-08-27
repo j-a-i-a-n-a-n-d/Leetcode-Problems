@@ -3,7 +3,7 @@ public:
     string shortestCommonSupersequence(string str1, string str2) 
     {
         int dp[str1.size()+1][str2.size()+1];
-        cout<<str1<<" "<<str2<<endl;
+        //cout<<str1<<" "<<str2<<endl;
         memset(dp,0,sizeof(dp));
         for(int i=1;i<str1.size()+1;i++)
         {
