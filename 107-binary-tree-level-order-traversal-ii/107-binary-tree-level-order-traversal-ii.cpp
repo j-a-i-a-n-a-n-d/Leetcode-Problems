@@ -42,3 +42,11 @@ public:
         return sol;
     }
 };
+//approach 2;
+//dont reverse vector;
+//find the height of the b tree;
+//insert in the vector after initialising level vectors to be empty;
+//vector<vector<int>> sol (vetcor<int>,({}));
+//then insert at the sol[d-1].push_back() ;
+//use queue;
+
