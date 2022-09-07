@@ -38,3 +38,4 @@ public:
         return sol;
     }
 };
+//without reversal at alternate use =>count with the code and insert ulta :");
