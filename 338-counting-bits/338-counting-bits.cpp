@@ -1,5 +1,9 @@
 class Solution {
 public:
+    //Brian Kerningam's Algorithm 
+    //can be used to find number of ones in a binary number 
+    // n = n & (n-1)
+    // this removes the last set bit of the decimal equivalent binary number
     vector<int> countBits(int n)
     {
         vector<int>sol;
