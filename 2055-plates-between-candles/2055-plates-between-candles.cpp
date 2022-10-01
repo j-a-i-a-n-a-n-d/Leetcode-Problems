@@ -1,5 +1,49 @@
 class Solution {
 public:
+    vector<int> platesBetweenCandles(string s, vector<vector<int>>& q)
+    {
+        int n=s.size();
+        
+        
+        vector<int>starsPrefixSum(n,0);
+        vector<int>candlesRight(n,0);
+        vector<int>candlesLeft(n,0);
+        
+        candlesLeft[0]=(s[0]=='|')?0:-1;
+        starsPrefixSum[0]=(s[0]=='*')?1:0;
+        candlesRight[n-1]=(s[n-1]=='|')?n-1:n;
+        
+        for(int i=1;i<n;i++)
+        {
+            starsPrefixSum[i]=
+                (s[i]=='*')?
+                starsPrefixSum[i-1]+1 : starsPrefixSum[i-1];
+            candlesLeft[i]=
+                (s[i]=='|')?
+                i : candlesLeft[i-1];
+        }
+        for(int i=n-2;i>=0;i--)
+        {
+            candlesRight[i]=(s[i]=='|')?i:candlesRight[i+1];
+        }
+        for(int i=0;i<n;i++)cout<<starsPrefixSum[i]<<" ";
+        cout<<endl;
+        for(int i=0;i<n;i++)cout<<candlesLeft[i]<<" ";
+        cout<<endl;
+        for(int i=0;i<n;i++)cout<<candlesRight[i]<<" ";
+        vector<int>sol(q.size(),0);
+        for(int i=0;i<q.size();i++)
+        {
+            int l=candlesRight[q[i][0]];
+            int r=candlesLeft[q[i][1]];
+            sol[i]=l>=r?0:starsPrefixSum[r]-starsPrefixSum[l];
+        }
+        return sol;
+    }
+};
+/*
+class Solution {
+public:
     vector<int> platesBetweenCandles(string s, vector<vector<int>>& queries) {
         vector<int> candles;
         int n = s.length();
@@ -55,3 +99,4 @@ public:
 //        return sol;
 //    }
 //};//
+*/
