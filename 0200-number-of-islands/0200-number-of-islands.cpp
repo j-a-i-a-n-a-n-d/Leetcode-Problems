@@ -13,7 +13,7 @@ public:
             q.pop();
             i = p.first;
             j = p.second;
-            if(visited[i][j])continue;
+            if(visited[i][j])continue;  ///vvv immpppp bina iske tle de rha 
             visited[i][j]=1;
             
             if(i-1>=0 && !visited[i-1][j] && grid[i][j]=='1')q.push({i-1,j});
