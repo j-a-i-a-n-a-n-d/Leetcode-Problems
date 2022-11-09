@@ -34,3 +34,5 @@ public:
 
     }
 };
+//approach 2 ====> maintain 2 queues one with the smaller half and one with the greater half 
+//then the median would either be the element in the queue with larger size or the last and first element from //each queue in the case of a resulting array of even elements 
