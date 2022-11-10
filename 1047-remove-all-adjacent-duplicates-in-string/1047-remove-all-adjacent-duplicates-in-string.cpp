@@ -14,7 +14,7 @@ public:
         string sol = "";
         while(!stock.empty())
         {
-            sol= string(stock.top()+sol);
+            sol= stock.top()+sol;
             stock.pop();
         }
         return sol;
