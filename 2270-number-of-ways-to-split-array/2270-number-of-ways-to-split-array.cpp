@@ -1,4 +1,4 @@
-#define ll long long int 
+#define ll long int 
 class Solution {
 public:
     int waysToSplitArray(vector<int>& nums) 
