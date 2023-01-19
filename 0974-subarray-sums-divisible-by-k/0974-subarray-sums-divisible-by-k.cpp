@@ -15,11 +15,11 @@ public:
         int rem=0;
         for(auto i : nums)
         { 
-            // rem = (i%k);
-            // rem=i<0?(k+rem)%k:rem;
-            rem = (k+i%k)%k;
-            sol = sol+ helperArray[rem];
-            helperArray[rem]++;
+             rem = i%k;
+             rem=i<0?(k+rem)%k:rem;
+             // rem = (k+i%k)%k;
+             sol = sol+ helperArray[rem];
+             helperArray[rem]++;
         }
         return sol;
     }
