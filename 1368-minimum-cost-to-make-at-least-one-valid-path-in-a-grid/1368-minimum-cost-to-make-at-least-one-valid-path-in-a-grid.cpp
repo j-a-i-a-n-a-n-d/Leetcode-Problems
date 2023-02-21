@@ -15,7 +15,7 @@ public:
         int m = grid[0].size();
         vector<vector<int>>dis(n,vector<int>(m,INT_MAX));
         deque<node> dq;
-        dq.push_front({0,0,0});
+        dq.push_front({0,0});
         // i j dis
         dis[0][0]=0;
         
@@ -26,33 +26,32 @@ public:
             
             int a = temp.get1;
             int b = temp.get2;
-            int d = temp.get3;
             
             int direction = grid[a][b];
             for(int i=0;i<4;i++)
             {
                 int ii = a+vps[i][0];
                 int jj = b+vps[i][1];
-                if (isValid(ii,jj,n,m) && direction==i+1 && (dis[a][b] + d < dis[ii][jj]))
+                if (isValid(ii,jj,n,m) && direction==i+1 && (dis[a][b] < dis[ii][jj]))
                 {
-                    dis[ii][jj]=dis[a][b] + d;
-                    dq.push_front({ii,jj,0});
+                    dis[ii][jj]=dis[a][b];
+                    dq.push_front({ii,jj});
                 }
-                else if (isValid(ii,jj,n,m) && (dis[a][b] + d < dis[ii][jj]))
+                else if (isValid(ii,jj,n,m) && (dis[a][b] < dis[ii][jj]))
                 {
-                    dis[ii][jj]=dis[a][b] + d+1;
-                    dq.push_back({ii,jj,0});
+                    dis[ii][jj]=dis[a][b]+1;
+                    dq.push_back({ii,jj});
                 }       
             }
         }
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<m;j++)
-            {
-                cout<<dis[i][j]<<" ";
-            }
-            cout<<endl;
-        }
+        //for(int i=0;i<n;i++)
+        //{
+        //    for(int j=0;j<m;j++)
+        //    {
+        //        cout<<dis[i][j]<<" ";
+        //    }
+        //    cout<<endl;
+        //}
         return dis[n-1][m-1];    
     }
 };
