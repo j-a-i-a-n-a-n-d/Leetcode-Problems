@@ -16,17 +16,13 @@ public:
         vector<vector<int>>dis(n,vector<int>(m,INT_MAX));
         deque<node> dq;
         dq.push_front({0,0});
-        // i j dis
         dis[0][0]=0;
-        
         while(!dq.empty())
         {
             node temp = dq.front();
             dq.pop_front();
-            
             int a = temp.get1;
             int b = temp.get2;
-            
             int direction = grid[a][b];
             for(int i=0;i<4;i++)
             {
