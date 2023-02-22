@@ -2,7 +2,7 @@ class Solution {
 public:
     typedef struct node
     {
-        int get1,get2,get3;
+        int get1,get2;
     }node;
     bool isValid(int i,int j,int n,int m){
         return i>=0 && i<n && j>=0 && j<m;
