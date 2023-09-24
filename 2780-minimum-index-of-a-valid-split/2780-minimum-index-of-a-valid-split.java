@@ -15,13 +15,13 @@ class Solution {
                 count=1;
             }
         }
-        // System.out.println(majorityElement);
+        //Finding Majority by Moore's Voting Algorithm
         
         int actual_count = 0;
         for(int i=0;i<len;i++){
             if(nums.get(i)==majorityElement)actual_count++;
         }
-        // System.out.println(actual_count);
+        // actual count of majority element
         
         int count_at_some_point =0;
         for(int i=0;i<len;i++)
@@ -30,9 +30,8 @@ class Solution {
             
             if((count_at_some_point*2 > i-0+1) &&
                ((actual_count-count_at_some_point)*2>len-i-1))return i;
-            
-            // System.out.println(count_at_some_point+" "+i);
         }
+        //dominant check
         
         return -1;
         
